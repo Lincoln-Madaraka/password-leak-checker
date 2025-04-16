@@ -60,7 +60,7 @@ CorrecthorseStablerider
 3. **Run the script**
 
 ```bash
-python check_passwords.py stored_passwords.txt
+python checkpasswords.py stored_passwords.txt
 ```
 
 ---
