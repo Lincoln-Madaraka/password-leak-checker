@@ -1,6 +1,9 @@
 import requests
 import hashlib
+import logging
 import sys
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def request_api_data(query_char):
     url = 'https://api.pwnedpasswords.com/range/' + query_char
@@ -33,9 +36,9 @@ def main(stored_passwords):
     for password in passwords:
         count = pwned_api_check(password)
         if count:
-            print(f'Password {password} has {count} times leaks.')
+            logging.info(f'Password {password} has {count} times leaks.')
         else:
-            print(f'Password {password} has no leaks.')
+            logging.info(f'Password {password} has no leaks.')
     return 'Done!'
 
 if __name__ == '__main__':
